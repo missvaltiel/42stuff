@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   gen.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/14 13:09:16 by karvin            #+#    #+#             */
-/*   Updated: 2016/07/21 20:24:05 by karvin           ###   ########.fr       */
+/*   Created: 2016/07/21 19:10:46 by karvin            #+#    #+#             */
+/*   Updated: 2016/07/21 19:18:29 by karvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c);
+void	ft_generic(void);
 
-void	ft_print_alphabet(void);
-
-int		main(void)
+int	main()
 {
-	ft_print_alphabet();
-	return (0);
+	ft_generic();
+	return(0);
 }
 
-void	ft_putchar(char c)
+void	ft_generic(void)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_alphabet(void)
-{
-	char	d;
-
-	d = 'a';
-	while (d <= 'z')
-	{
-		ft_putchar(d);
-		d++;
-	}
-	ft_putchar('\n');
+	char *str;
+	write(1, "Tu tu tu tu ; Tu tu tu tu\n", 26);
 }
