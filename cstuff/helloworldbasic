@@ -1,0 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   great.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: karvin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/07/18 19:56:59 by karvin            #+#    #+#             */
+/*   Updated: 2016/07/18 20:06:55 by karvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+/*the header above and main start below. it is not taking any arguments*/
+int	main(void)
+{
+	printf("This is the stufff.\n");
+	return (0);
+}
