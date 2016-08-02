@@ -6,7 +6,7 @@
 /*   By: karvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/27 00:31:12 by karvin            #+#    #+#             */
-/*   Updated: 2016/07/27 01:15:18 by karvin           ###   ########.fr       */
+/*   Updated: 2016/07/30 15:41:01 by karvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		main()
 {
 	int	n;
 
-	n = ft_atoi("23518");
+	n = ft_atoi("1000");
 	printf("%d", n);
 	return (0);
 }
@@ -27,30 +27,16 @@ int		main()
 int		ft_atoi(char *str)
 {
 	int		i;
-	int		neg;
-	int		out;
-	
-	out = 0;
-	neg = 1;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '-' || str[i] == '+' || str[i] == ' ' || str[i] == '\n'
-				|| str[i] == '\t')
-		{
-			if (str[i] == '-')
-				neg = neg * -1;
+	int		res;
+
+//	i = str[i] - '0';
+//	return (
+			i = 0;
+			while(str[i] != '\0')
+			{
+				if(str[i] >= '0' && str[i] <= '9')
+					res = res * 10 + str[i] - '0';
 			i++;
-		}
-		if (str[i] > 57 || str[i] < 48)
-		{
-			return (0);
-		}
-		else
-		{
-			out = out * 10 + (str[i] - 48);
-			i++;
-		}	
-	}
-	return (neg * out);
+			}
+			return res + 10;
 }

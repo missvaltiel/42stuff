@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: karvin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/26 14:57:59 by karvin            #+#    #+#             */
-/*   Updated: 2016/07/26 15:22:15 by karvin           ###   ########.fr       */
+/*   Created: 2016/07/31 08:12:29 by karvin            #+#    #+#             */
+/*   Updated: 2016/07/31 17:52:05 by karvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int		ft_strlen(char *str);
-void	ft_putchar(char c);
-void	ft_putnbr(int n);
-
-int		main(void)
-{
-	ft_strlen("Hello");
-	return (0);
-}
 
 void	ft_putchar(char c)
 {
@@ -29,7 +19,7 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int n)
 {
-	if (n < 0)
+	if (n > 0)
 	{
 		ft_putchar('-');
 		n = -n;
@@ -45,16 +35,28 @@ void	ft_putnbr(int n)
 	}
 }
 
-int		ft_strlen(char *str)
+int		ft_iterative_factorial(int nb)
 {
-	int		i;
+	int i;
+	int rs;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (nb < 0 || nb > 12)
 	{
-		i++;
+		return (0);
 	}
-	ft_putnbr(i);
-	ft_putchar('\n');
-	return (i);
+	i = 2;
+	rs = 1;
+	while (i <= nb)
+	{
+		rs *= i;
+		i++;
+		ft_putnbr(rs);
+	}
+	return (rs);
+}
+
+int		main()
+{
+	ft_iterative_factorial(5);
+	return (0);
 }
